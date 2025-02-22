@@ -5,6 +5,18 @@ function addSong() {
     let artist = document.getElementById("artist").value;
     let duration = document.getElementById("duration").value;
 
+    if(title == '') {
+        alert("Fill in all the boxes")
+        return;
+    }
+    if(artist == '') {
+        alert("Fill in all the boxes")
+        return;
+    }
+    if(duration == '') {
+        alert("Fill in all the boxes")
+        return;
+    }
     let Song = {
         songTitle: title,
         songArtist: artist,
@@ -12,6 +24,9 @@ function addSong() {
     }
     playlist.push(Song)
     displayPlaylist();
+    document.getElementById('songTitle').value = '';
+    document.getElementById('artist').value = '';
+    document.getElementById('duration').value = '';
 }
 
 
